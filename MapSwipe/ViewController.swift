@@ -29,7 +29,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let navButton = MKUserTrackingBarButtonItem(mapView: self.mapView)
         self.navigationItem.leftBarButtonItem = navButton
         
-        
     }
     
     
