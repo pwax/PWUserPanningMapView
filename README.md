@@ -1,7 +1,7 @@
 # PWUserPanningMapView
 PWUserPanningMapView is an MKMapView subclass that allows panning around the user's current location Pokémon GO-style.
 
-![gif](http://i.imgur.com/LR3pP4o.gif)
+![Animation](http://i.giphy.com/l46CroQUZmrV0j6ww.gif)
 
 ## Installation
 * Clone the PWUserPanningMapView repo
