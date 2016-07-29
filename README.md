@@ -5,7 +5,7 @@ PWUserPanningMapView is an MKMapView subclass that allows panning around the use
 
 ## Installation
 * Clone the PWUserPanningMapView repo
-* Drag and drop PWUserPanningMapView.swift file into your project
+* Drag and drop the `PWUserPanningMapView.swift` file into your project
 
 ## Usage
 * PWUserPanningMapView works just like the standard MKMapView but has the following properties:
