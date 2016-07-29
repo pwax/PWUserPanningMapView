@@ -43,19 +43,22 @@ class PWUserPanningMapView: MKMapView, UIGestureRecognizerDelegate {
         //setup our pan gesture recognizer
         self.panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGesture))
         self.panGestureRecognizer.delegate = self
+    
         self.addGestureRecognizer(panGestureRecognizer)
         //should pan around user is true by default
         shouldPanAroundUser = true
         //default pitch threshold
         self.pitchThreshold = 20
+    
     }
     
     @objc private func panGesture(pan: UIPanGestureRecognizer){
-        
         //check our threshold and tracking mode
         if self.camera.pitch >= pitchThreshold && userTrackingMode == .Follow{
-            //change our heading based on the x position of our pan
-            self.camera.heading = Double(pan.translationInView(self).x)
+            // save current heading for continuous scrolling
+            let currentHeading = self.camera.heading
+            //change our heading based on the x position of our pan, maintaining current pan
+            self.camera.heading = currentHeading + 0.02 * Double(pan.translationInView(self).x)
         }
         
     }
@@ -69,7 +72,9 @@ class PWUserPanningMapView: MKMapView, UIGestureRecognizerDelegate {
         }else{
             return true
         }
-        
+
+    
+
     }
     
     
